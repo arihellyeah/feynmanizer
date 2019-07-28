@@ -10,18 +10,28 @@
   </head>
 
   <body>
-    <header class="row">
-      <div class="logo">
-        LOGO
+    <header class='row top'>
+      <div class='col-3'>
+        <%= image_tag("feynman.png",  alt: "Feynman", class: "feynman-img") %>
       </div>
-      <div class="col-4">
-        "These are words"
+      <div class="col-5 tagline">
+        Complex concepts boiled down with the Feynman technique.
       </div>
-      <div class="col-5">
-        <%= link_to 'Contribute', '#' %>
-        <%= link_to 'About', '#' %>
+      <div class="col-4 links">
+
+          <%= link_to 'Contribute', '#', class: 'no-drop' %>
+          <%= link_to 'About', '#', class: 'no-drop' %>
+
+        <div class="dropdown">
+          <button class="dropbtn">Categories</button>
+          <div class="col-3 dropdown-content">
+            <%= link_to 'Coding', '#' %>
+            <%= link_to 'Science', '#' %>
+          </div>
+        </div>
       </div>
     </header>
+
     <br class='clear'>
     <%= yield %>
   </body>
