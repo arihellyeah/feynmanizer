@@ -1,9 +1,9 @@
 <h1>Pour your knowledge.</h1>
 <br>
 <%= simple_form_for @fact do |f| %>
-  <%= f.input :title, label: 'What\'s the concept?', input_html: { minlength: 3, maxlength: 50 } %>
+  <%= f.input :title, label: 'What\'s the concept?' %>
   <br>
-  <%= f.input :blurb, label: 'How would you explain it to a child?', input_html: { minlength: 3 } %>
+  <%= f.input :blurb, label: 'How would you explain it to a child?'%>
   <br>
   <%= f.input :category, as: :radio_buttons, collection: [['Coding', 'Coding'], ['Science', 'Science'], ['Other', 'Other']], label_method: :second, value_method: :first %>
   <br>

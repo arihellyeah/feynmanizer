@@ -8,7 +8,10 @@ class FactsController < ApplicationController
   end
 
   def create
-    Fact.create(fact_params)
+    @fact = Fact.create(fact_params)
+    if @fact.invalid?
+      flash[:error] = 'The data you entered is <em>invalid</em>'
+    end
     redirect_to root_path
   end
 
