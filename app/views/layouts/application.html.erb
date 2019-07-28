@@ -12,14 +12,14 @@
   <body>
     <header class='row top'>
       <div class='col-3'>
-        <%= image_tag("feynman.png",  alt: "Feynman", class: "feynman-img") %>
+        <%= link_to image_tag("feynman.png",  alt: "Feynman", class: "feynman-img"), root_path %>
       </div>
       <div class="col-5 tagline">
         Complex concepts boiled down with the Feynman technique.
       </div>
       <div class="col-4 links">
 
-          <%= link_to 'Contribute', '#', class: 'no-drop' %>
+          <%= link_to 'Contribute', new_fact_path, class: 'no-drop' %>
           <%= link_to 'About', '#', class: 'no-drop' %>
 
         <div class="dropdown">
@@ -41,7 +41,7 @@
       <div class="container">
         <div class="row">
           <div class="col-6">
-            <%= link_to 'Give me a new concept!', '#', class: 'next-quote' %>
+            <%= link_to 'Give me a new concept!', root_path, class: 'next-quote' %>
           </div>
           <div class="col-6 footer-blurb">
             Proudly hacked by <a href="https://arieloring.netlify.com/">Arielle Loring.</a><br />
