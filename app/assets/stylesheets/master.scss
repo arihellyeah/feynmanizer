@@ -22,6 +22,7 @@
   margin-top: 35px;
   color: white;
   font-family: 'Raleway', sans-serif;
+  font-style: italic;
 
 }
 
@@ -73,15 +74,60 @@
 .no-drop{
   background-color: #8d8e8f;
   color: white;
-  padding: 16px;
   font-size: 16px;
   border: none;
   margin: 0;
   text-decoration: none;
+  padding: 13.5px;
 
 }
 .no-drop:hover {
   background-color: #555657;
   text-decoration: none;
   color: white;
+}
+
+h1 {
+font-family: 'colaborate-boldregular', 'sans-serif';
+}
+
+h2 {
+font-family: 'colaborate-regularregular', 'sans-serif';
+}
+
+p {
+font-family: 'colaborate-thinregular', 'sans-serif';
+}
+
+.card {
+  text-align: center;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+.footer-blurb{
+  text-align: right;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+
+
+}
+.next-quote {
+  color: black;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+
 }

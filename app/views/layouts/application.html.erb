@@ -33,6 +33,25 @@
     </header>
 
     <br class='clear'>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <%= link_to 'Give me a new concept!', '#', class: 'next-quote' %>
+          </div>
+          <div class="col-6 footer-blurb">
+            Proudly hacked by <a href="https://arieloring.netlify.com/">Arielle Loring.</a><br />
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </body>
 </html>
