@@ -39,7 +39,10 @@ class FactsController < ApplicationController
   end
 
   def update
-  end 
+    @fact = Fact.find(params[:id])
+    @fact.update_attributes(fact_params)
+    redirect_to root_path
+  end
 
 
   private
