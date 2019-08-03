@@ -101,6 +101,10 @@ font-family: 'colaborate-thinregular', 'sans-serif';
 
 .card {
   text-align: center;
+  padding: 10px 8px 10px 8px;
+  background-color: rgba(95, 95, 95,.3);
+  box-shadow: 5px 10px 10px 5px #888888;
+  margin: 25px;
 }
 html {
   position: relative;
@@ -109,6 +113,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  background-image: url('pipes.png');
 }
 .footer {
   position: absolute;
@@ -130,4 +135,23 @@ body {
   font-family: 'Raleway', sans-serif;
   font-size: 20px;
 
+}
+.form {
+  text-align: left;
+  padding: 25px;
+  background-color: rgba(95, 95, 95,.3);
+  box-shadow: 5px 10px 10px 5px #888888;
+  margin: 25px;
+}
+
+.form-check {
+  margin: 25px;
+}
+
+.form, a {
+  color: black;
+}
+
+.form, a:hover {
+  color: grey;
 }

@@ -1,3 +1,4 @@
+<div class="form">
 <h1>Pour your knowledge.</h1>
 <br>
 <%= simple_form_for @fact do |f| %>
@@ -5,8 +6,11 @@
   <br>
   <%= f.input :blurb, label: 'How would you explain it to a child?'%>
   <br>
+
   <%= f.input :category, as: :radio_buttons, collection: [['coding', 'Coding'], ['science', 'Science'], ['other', 'Other']], label_method: :second, value_method: :first %>
-  <br>
-  <%= f.submit 'Create', class: 'btn btn-danger' %>
+  <%= f.submit 'Create', class: 'btn btn-info' %>
 
 <% end %>
+</div>
+<br>
+<br>
