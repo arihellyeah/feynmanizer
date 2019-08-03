@@ -1,5 +1,9 @@
 <h1><%= @fact.title %></h1>
 <h2><%= @fact.blurb %></h2>
 <p><%= @fact.category %></p>
-<%= link_to 'Edit', edit_fact_path(@fact), class: 'btn btn-warning' %>
-<%= link_to 'Destroy', fact_path(@fact), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-danger' %>
+<div class="float-right">
+<% if current_user && current_user == @fact.user %>
+  <%= link_to 'Edit', edit_fact_path(@fact), class: 'btn btn-warning' %>
+  <%= link_to 'Destroy', fact_path(@fact), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-danger' %>
+<% end %>
+</div>
