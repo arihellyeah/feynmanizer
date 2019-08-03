@@ -1,6 +1,15 @@
 class FactsController < ApplicationController
   def index
-    @fact = Fact.order("RANDOM()").first
+    @facts = if params[:category] == "coding"
+      Fact.where(category: "coding")
+    elsif params[:category] == "science"
+      Fact.where(category: "science")
+    elsif params[:category] == "other"
+      Fact.where(category: "other")
+    else
+      Fact.all
+    end
+    #@fact = Fact.order("RANDOM()").first
   end
 
   def new
@@ -14,6 +23,10 @@ class FactsController < ApplicationController
     end
     redirect_to root_path
   end
+
+  def about
+  end
+
 
   private
 

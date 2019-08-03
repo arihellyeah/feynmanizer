@@ -20,13 +20,15 @@
       <div class="col-4 links">
 
           <%= link_to 'Contribute', new_fact_path, class: 'no-drop' %>
-          <%= link_to 'About', '#', class: 'no-drop' %>
+          <%= link_to 'About', about_path , class: 'no-drop' %>
 
         <div class="dropdown">
           <button class="dropbtn">Categories</button>
           <div class="col-3 dropdown-content">
-            <%= link_to 'Coding', '#' %>
-            <%= link_to 'Science', '#' %>
+            <%= link_to 'Coding', facts_path({category:"coding"}) %>
+            <%= link_to 'Science', facts_path({category:"science"}) %>
+            <%= link_to 'Other', facts_path({category:"other"}) %>
+
           </div>
         </div>
       </div>

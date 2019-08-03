@@ -5,7 +5,7 @@
   <br>
   <%= f.input :blurb, label: 'How would you explain it to a child?'%>
   <br>
-  <%= f.input :category, as: :radio_buttons, collection: [['Coding', 'Coding'], ['Science', 'Science'], ['Other', 'Other']], label_method: :second, value_method: :first %>
+  <%= f.input :category, as: :radio_buttons, collection: [['coding', 'Coding'], ['science', 'Science'], ['other', 'Other']], label_method: :second, value_method: :first %>
   <br>
   <%= f.submit 'Create', class: 'btn btn-danger' %>
 
