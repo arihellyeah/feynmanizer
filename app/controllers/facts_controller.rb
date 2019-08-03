@@ -44,6 +44,12 @@ class FactsController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    @fact = Fact.find(params[:id])
+    @fact.destroy
+    redirect_to root_path
+  end
+
 
   private
 
