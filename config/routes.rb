@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   root 'facts#index'
   resources :facts
   get 'about', to: 'facts#about'
