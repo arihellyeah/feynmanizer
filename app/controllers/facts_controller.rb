@@ -9,7 +9,7 @@ class FactsController < ApplicationController
     elsif params[:category] == "other"
       Fact.where(category: "other")
     else
-      Fact.all
+      @fact = Fact.all.order("created_at DESC").paginate(page: params[:page], per_page:5)
     end
     #@fact = Fact.order("RANDOM()").first
   end

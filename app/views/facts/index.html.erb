@@ -1,5 +1,3 @@
-<div class="sik-box">
-
 <% @facts.each do |fact| %>
 <div class="card">
 <h1><%= link_to fact.title, fact_path(fact) %></h1>
@@ -10,5 +8,5 @@
 <small><%= fact.user.email %></small>
 <% end %>
 </div>
+<% will_paginate @facts %>
 <% end %>
-</div>

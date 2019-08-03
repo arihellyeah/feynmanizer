@@ -14,10 +14,10 @@
       <div class='col-2'>
         <%= link_to image_tag("feynman.png",  alt: "Feynman", class: "feynman-img"), root_path %>
       </div>
-      <div class="col-5 tagline">
+      <div class="col-4 tagline">
         Complex concepts boiled down with the Feynman technique.
       </div>
-      <div class="col-5 links">
+      <div class="col-6 links">
 
           <%= link_to 'Contribute', new_fact_path, class: 'no-drop' %>
           <%= link_to 'About', about_path , class: 'no-drop' %>
@@ -28,26 +28,25 @@
             <%= link_to 'Coding', facts_path({category:"coding"}) %>
             <%= link_to 'Science', facts_path({category:"science"}) %>
             <%= link_to 'Other', facts_path({category:"other"}) %>
-
           </div>
-          <% if user_signed_in? %>
-
-            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'no-drop' %>
-
-          <% else %>
-
-            <%= link_to 'Sign in', user_session_path, class: 'no-drop' %>
-            <%= link_to 'Sign Up', new_user_registration_path, class: 'no-drop' %>
-
-          <% end %>
         </div>
+            <% if user_signed_in? %>
+
+              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'no-drop' %>
+
+            <% else %>
+
+              <%= link_to 'Sign in', user_session_path, class: 'no-drop' %>
+              <%= link_to 'Sign Up', new_user_registration_path, class: 'no-drop' %>
+
+            <% end %>
       </div>
     </header>
 
     <% if notice.present? %>
       <p class="alert alert-info"><%= notice %></p>
     <% end %>
-    <% if notice.present? %>
+    <% if alert.present? %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
@@ -64,10 +63,8 @@
     <div class="footer">
       <div class="container">
         <div class="row">
-          <div class="col-6">
-            <%= link_to 'Give me a new concept!', root_path, class: 'next-quote' %>
-          </div>
-          <div class="col-6 footer-blurb">
+
+          <div class="col-12 footer-blurb">
             Proudly hacked by <a href="https://arieloring.netlify.com/">Arielle Loring.</a><br />
           </div>
 
