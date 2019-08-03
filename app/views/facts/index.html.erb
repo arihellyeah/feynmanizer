@@ -1,7 +1,14 @@
+<div class="sik-box">
+
 <% @facts.each do |fact| %>
 <div class="card">
 <h1><%= fact.title %></h1>
 <h2><%= fact.blurb %></h2>
 <p><%= fact.category %></p>
+<br>
+<% if fact.user.present? %>
+<small><%= fact.user.email %></small>
+<% end %>
 </div>
 <% end %>
+</div>

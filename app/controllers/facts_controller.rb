@@ -1,4 +1,6 @@
 class FactsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+
   def index
     @facts = if params[:category] == "coding"
       Fact.where(category: "coding")
@@ -17,11 +19,11 @@ class FactsController < ApplicationController
   end
 
   def create
-    @fact = Fact.create(fact_params)
-    if @fact.invalid?
-      flash[:error] = 'The data you entered is <em>invalid</em>'
-    end
-    redirect_to root_path
+    @fact = current_user.facts.create(fact_params)
+    if @fact.valid?
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
   end
 
   def about

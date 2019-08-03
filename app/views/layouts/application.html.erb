@@ -11,13 +11,13 @@
 
   <body>
     <header class='row top'>
-      <div class='col-3'>
+      <div class='col-2'>
         <%= link_to image_tag("feynman.png",  alt: "Feynman", class: "feynman-img"), root_path %>
       </div>
       <div class="col-5 tagline">
         Complex concepts boiled down with the Feynman technique.
       </div>
-      <div class="col-4 links">
+      <div class="col-5 links">
 
           <%= link_to 'Contribute', new_fact_path, class: 'no-drop' %>
           <%= link_to 'About', about_path , class: 'no-drop' %>
@@ -30,9 +30,26 @@
             <%= link_to 'Other', facts_path({category:"other"}) %>
 
           </div>
+          <% if user_signed_in? %>
+
+            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'no-drop' %>
+
+          <% else %>
+
+            <%= link_to 'Sign in', user_session_path, class: 'no-drop' %>
+            <%= link_to 'Sign Up', new_user_registration_path, class: 'no-drop' %>
+
+          <% end %>
         </div>
       </div>
     </header>
+
+    <% if notice.present? %>
+      <p class="alert alert-info"><%= notice %></p>
+    <% end %>
+    <% if notice.present? %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
 
     <br class='clear'>
     <div class="container">
@@ -59,8 +76,6 @@
       </div>
 
     </div>
-    <p class="alert alert-info"><%= notice %></p>
-    <p class="alert alert-danger"><%= alert %></p>
 
 
     <% yield %>
