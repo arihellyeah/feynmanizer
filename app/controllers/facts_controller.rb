@@ -24,9 +24,14 @@ class FactsController < ApplicationController
       redirect_to root_path
     else
       render :new, status: :unprocessable_entity
+    end 
   end
 
   def about
+  end
+
+  def show
+    @facts = Fact.find(params[:id])
   end
 
 
@@ -35,5 +40,4 @@ class FactsController < ApplicationController
   def fact_params
     params.require(:fact).permit(:title, :blurb, :category)
   end
-
 end

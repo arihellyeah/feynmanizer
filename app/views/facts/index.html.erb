@@ -2,7 +2,7 @@
 
 <% @facts.each do |fact| %>
 <div class="card">
-<h1><%= fact.title %></h1>
+<h1><%= link_to fact.title, fact_path(fact) %></h1>
 <h2><%= fact.blurb %></h2>
 <p><%= fact.category %></p>
 <br>
