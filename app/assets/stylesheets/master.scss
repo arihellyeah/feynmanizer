@@ -93,10 +93,12 @@ font-family: 'colaborate-boldregular', 'sans-serif';
 
 h2 {
 font-family: 'colaborate-regularregular', 'sans-serif';
+color: black;
 }
 
 p {
 font-family: 'colaborate-thinregular', 'sans-serif';
+color: black;
 }
 
 .card {
@@ -142,6 +144,7 @@ body {
   background-color: rgba(95, 95, 95,.3);
   box-shadow: 5px 10px 10px 5px #888888;
   margin: 25px;
+  color: black;
 }
 
 .form-check {
@@ -154,4 +157,7 @@ body {
 
 .form, a:hover {
   color: grey;
+}
+.form-inputs {
+  color: black;
 }

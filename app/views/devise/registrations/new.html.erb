@@ -1,5 +1,6 @@
+<div class="form col-10 offset-1">
 <h2>Sign up</h2>
-
+<br>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
@@ -18,8 +19,11 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <br>
+    <%= f.button :submit, "Sign up", class: 'btn' %>
   </div>
+  <br>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
