@@ -32,6 +32,7 @@ class FactsController < ApplicationController
 
   def show
     @fact = Fact.find(params[:id])
+    @comment = Comment.new
   end
 
   def edit
