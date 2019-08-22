@@ -1,0 +1,4 @@
+<%= simple_form_for @comment, url: fact_comment_path, :method => :patch do |f| %>
+  <%= f.input :message %>
+  <%= f.submit "Edit Comment", class: 'btn btn-primary' %>
+<% end %>

@@ -67,6 +67,8 @@ gem 'bootstrap', '4.0.0.alpha6'
 gem 'simple_form'
 gem 'devise'
 gem 'will_paginate', '~> 3.1.0'
+gem 'pry', '~> 0.12.2'
+gem 'pry-byebug', '~> 3.4'
 
 
 source 'https://rails-assets.org' do

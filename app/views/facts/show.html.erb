@@ -12,3 +12,22 @@
   <%= f.input :message %>
   <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
 <% end %>
+
+<h1>Comments</h1>
+
+<% @fact.comments.each do |comment| %>
+  <div>
+    <blockquote>
+      <b><%= comment.message %></b>
+      <small><%= comment.user.email %></small>
+      <div class="float-right">
+      <% if current_user && current_user == @fact.user %>
+        <%= link_to 'Edit', edit_fact_comment_path(@fact, comment), class: 'btn btn-warning' %>
+        <%= link_to 'Destroy', fact_comment_path(@fact, comment), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-danger' %>
+      <% end %>
+      </div>
+
+    </blockquote>
+
+  </div>
+<% end %>
