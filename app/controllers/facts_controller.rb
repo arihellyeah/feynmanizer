@@ -2,6 +2,7 @@ class FactsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
+    #facts.where(category: params[:category])
     @facts = if params[:category] == "coding"
       Fact.where(category: "coding")
     elsif params[:category] == "science"
@@ -19,6 +20,13 @@ class FactsController < ApplicationController
   end
 
   def create
+    #@fact = Fact.new(params)
+      #if @object.save
+      #  redir
+      #else
+      #render new (
+
+    
     @fact = current_user.facts.create(fact_params)
     if @fact.valid?
       redirect_to root_path

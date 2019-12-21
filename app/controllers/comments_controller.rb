@@ -8,23 +8,22 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    puts params
     @comment = Comment.find(params[:id])
     #@fact.comments.create(comment_params.merge(user: current_user))
-    #if @fact.user != current_user
-    #  return render plain: 'Not Allowed', status: :forbidden
-  #  end
+    if @comment.user != current_user
+      return render plain: 'Not Allowed', status: :forbidden
+    end
   end
 
   def update
     @comment = Comment.find(params[:id])
-    @comment.update_attributes!(comment_params.to_h)
+    @comment.update(comment_params.to_h)
     redirect_to fact_path(@comment.fact)
   end
 
   def destroy
     @comment = Comment.find(params[:id])
-    if @comment.fact.user != current_user
+    if @comment.user != current_user
       return render plain: 'Not Allowed', status: :forbidden
     end
     @comment.destroy
