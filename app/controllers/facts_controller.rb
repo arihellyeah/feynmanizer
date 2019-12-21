@@ -26,7 +26,13 @@ class FactsController < ApplicationController
       #else
       #render new (
     @fact = current_user.facts.create(fact_params)
-    if @fact.valid?
+
+    hash = DictionaryService.new
+    escaped_title = URI.escape(@fact.title)
+    @fact.definition = hash.get_definition(escaped_title)
+
+
+    if @fact.definition.valid?
       redirect_to root_path
     else
       render :new, status: :unprocessable_entity
@@ -37,8 +43,11 @@ class FactsController < ApplicationController
   end
 
   def show
-    @fact = Fact.find(params[:id])
+    @fact = Fact.find_by_id(params[:id])
     @comment = Comment.new
+    if @fact.blank?
+      render plain: 'Not Found :(', status: :not_found
+    end
   end
 
   def edit
@@ -70,6 +79,6 @@ class FactsController < ApplicationController
   private
 
   def fact_params
-    params.require(:fact).permit(:title, :blurb, :category)
+    params.require(:fact).permit(:title, :blurb, :category, :definition)
   end
 end

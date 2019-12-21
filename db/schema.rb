@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_14_013101) do
+ActiveRecord::Schema.define(version: 2019_12_21_191511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2019_08_14_013101) do
     t.text "blurb"
     t.string "category"
     t.integer "user_id"
+    t.text "definition"
     t.index ["user_id"], name: "index_facts_on_user_id"
   end
 

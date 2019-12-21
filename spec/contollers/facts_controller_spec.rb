@@ -1,6 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe FactsController, type: :controller do
+  describe "facts#show action" do
+    it "should successfully show the page if fact is found" do
+      fact = post :create, params: { fact: { title: "Food", blurb: "What living beings use for energy", category: "other" } }
+      get :show, params { id: fact.id }
+      expect(response).to have_http_status(:success)
+    end
+
+    it "should return a 404 error if the fact is not found" do
+      get :show, params: { id: 'TACOCAT' }
+      expect(response).to have_http_status(:not_found)
+    end
+    
   describe "facts#index action" do
     it "should successfully show the page" do
       get :index
