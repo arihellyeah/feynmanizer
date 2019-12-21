@@ -25,8 +25,6 @@ class FactsController < ApplicationController
       #  redir
       #else
       #render new (
-
-    
     @fact = current_user.facts.create(fact_params)
     if @fact.valid?
       redirect_to root_path
