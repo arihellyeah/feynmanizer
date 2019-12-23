@@ -29,10 +29,11 @@ class FactsController < ApplicationController
 
     hash = DictionaryService.new
     escaped_title = URI.escape(@fact.title)
-    @fact.definition = hash.get_definition(escaped_title)
+    parsed = hash.get_definition(escaped_title)
+    @fact.definition = hash.def_from_api(parsed)
+    @fact.save
 
-
-    if @fact.definition.valid?
+    if @fact.valid?
       redirect_to root_path
     else
       render :new, status: :unprocessable_entity

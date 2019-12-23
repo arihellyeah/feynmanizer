@@ -81,3 +81,4 @@ end
 gem "http"
 gem "json"
 gem "figaro"
+gem "jsonpath"
