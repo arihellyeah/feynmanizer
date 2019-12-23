@@ -2,7 +2,7 @@
 <h1>Refactor your Entry.</h1>
 <br>
 <%= simple_form_for @fact do |f| %>
-  <%= f.input :title, label: 'What\'s the concept?' %>
+  <%= f.input :title, label: 'What\'s the concept?', readonly: true %>
   <br>
   <%= f.input :blurb, label: 'How would you explain it to a child?'%>
   <br>
