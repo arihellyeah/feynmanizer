@@ -29,8 +29,7 @@ class FactsController < ApplicationController
 
     hash = DictionaryService.new
     escaped_title = URI.escape(@fact.title)
-    parsed = hash.get_definition(escaped_title)
-    @fact.definition = hash.def_from_api(parsed)
+    @fact.definition = hash.def_from_api(escaped_title)
     @fact.save
 
     if @fact.valid?

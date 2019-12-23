@@ -56,7 +56,7 @@ RSpec.describe FactsController, type: :controller do
       sign_in user
 
       fact_count = Fact.count
-      post :create, params: { fact: { title: ''} }
+      post :create, params: { fact: { title: 'Food', blurb: '', category: '', definition: ''} }
       expect(response).to have_http_status(:unprocessable_entity)
       expect(Fact.count).to eq Fact.count
     end
